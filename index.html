@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="simongame.css">
+  <title>Simon</title>
+</head>
+<body>
+  <script src="simongame.js"></script>
+  <div class=container>
+  <div class=outer-circle>
+    <div class="top">
+      <button class="top-left btn" id="topleft" onclick="userinput();" ></button>
+      <button class="top-right btn" id="topright" onclick="userinput();"></button>
+    </div>
+    <div class="bottom">
+      <button class="bottom-left btn" id="bottomleft" onclick="userinput();"></button>
+      <button class="bottom-right btn" id="bottomright" onclick="userinput();"></button>
+    </div>
+  </div>
+  <div class=inner-circle>
+    <h3>Simon</h3>
+    <button class=start id="startbtn" onclick="start();">
+</button>
+  </div>
+</div>
+</body>
+</html>
