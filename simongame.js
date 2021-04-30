@@ -10,7 +10,7 @@ function changered(){
   src.style.backgroundColor = '#ff0000';
   setTimeout(function(){
       src.style.backgroundColor = prevColor;
-  }, 1000); 
+  }, 600); 
 }
 
 function changegreen(){
@@ -19,7 +19,7 @@ function changegreen(){
   src.style.backgroundColor = '#00ff00';
   setTimeout(function(){
       src.style.backgroundColor = prevColor;
-  }, 1000); 
+  }, 600); 
 }
 
 function changeyellow(){
@@ -28,7 +28,7 @@ function changeyellow(){
   src.style.backgroundColor='#ffff00';
   setTimeout(function(){
       src.style.backgroundColor = prevColor;
-  }, 1000); 
+  }, 600); 
 }
 
 function changeblue(){
@@ -37,7 +37,7 @@ function changeblue(){
   src.style.backgroundColor = '#0059ff';
   setTimeout(function(){
       src.style.backgroundColor = prevColor;
-  }, 1000); 
+  }, 600); 
 }
 
 function getRandomNumber(min, max) {
@@ -49,9 +49,9 @@ function getRandomNumber(min, max) {
 
 function repeat(func, times) {
   if (times>0){
-  setTimeout(function(){ func(); },1000);
+  func();
   times=times-1;
-  repeat(func, times);
+  setTimeout(function(){repeat(func, times)},1000);
 } else {
   console.log("lightup ends")
 }
@@ -65,46 +65,51 @@ switch (colourbtns[index]){
 case 'g':
   changegreen();
   randompattern.push('g');
-  console.log("rp g" +randompattern);
+  console.log("rp g=" +randompattern);
   break;
 case 'r':
   changered();
   randompattern.push('r');
-  console.log("rp r" +randompattern);
+  console.log("rp r=" +randompattern);
   break;
 case 'y':
     changeyellow();
     randompattern.push('y');
-    console.log("rp y" +randompattern);
+    console.log("rp y=" +randompattern);
     break;
 case 'b':
     changeblue();
     randompattern.push('b');
-    console.log("rp b" +randompattern);
+    console.log("rp b=" +randompattern);
     break;
 }
 }
 
-function userinput() {
-  document.getElementById('topright').onclick= function(){
+function rclick(){
   userpattern.push('r');
   userclicks+=1;
- };
+}
 
- document.getElementById('topleft').onclick= function(){
+function gclick(){
   userpattern.push('g');
   userclicks+=1;
- };
+}
 
- document.getElementById('bottomleft').onclick= function(){
-  userpattern.push('y');
-  userclicks+=1;
- };
-
- document.getElementById('bottomright').onclick= function(){
+function bclick(){
   userpattern.push('b');
   userclicks+=1;
- };
+}
+
+function yclick(){
+  userpattern.push('y');
+  userclicks+=1;
+}
+
+function userinput(){
+  document.getElementById('topright').onclick= rclick();
+  document.getElementById('topleft').onclick= gclick();
+  document.getElementById('bottomleft').onclick= yclick();
+  document.getElementById('bottomright').onclick= bclick();
 }
 
 function check(){
@@ -116,7 +121,7 @@ if(JSON.stringify(randompattern)==JSON.stringify(userpattern)){
     randompattern=[];
     userpattern=[];
     userclicks=0;
-    alert("Level "+level);
+    alert("Way to go! \nLevel "+level);
     console.log("levelafter+1 =" +level);
     start();
   } else {
@@ -124,7 +129,7 @@ if(JSON.stringify(randompattern)==JSON.stringify(userpattern)){
     randompattern=[];
     userpattern=[];
     userclicks=0;
-    alert("Sorry! Start Again")
+    alert("Sorry, you lost :/ \nStart Again!")
     console.log("start again");
   }
 }
@@ -134,6 +139,6 @@ repeat(lightup, level);
 console.log(userclicks);
 console.log(level);
 if (userclicks!=level){
-  setTimeout(function(){ check(); }, 5000);
+  setTimeout(function(){ check(); }, level*2000);
 }
 }
