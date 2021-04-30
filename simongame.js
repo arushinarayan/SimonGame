@@ -105,13 +105,6 @@ function yclick(){
   userclicks+=1;
 }
 
-function userinput(){
-  document.getElementById('topright').onclick= rclick();
-  document.getElementById('topleft').onclick= gclick();
-  document.getElementById('bottomleft').onclick= yclick();
-  document.getElementById('bottomright').onclick= bclick();
-}
-
 function check(){
   console.log("check")
   console.log("rp=" +JSON.stringify(randompattern));
