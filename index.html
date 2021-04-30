@@ -9,15 +9,17 @@
 </head>
 <body>
   <script src="simongame.js"></script>
+  <h1>SIMON</h1>
+    <h2>Click on the Green Button to start.<br>Repeat the Pattern to cross the level!</h2>
   <div class=container>
   <div class=outer-circle>
     <div class="top">
-      <button class="top-left btn" id="topleft" onclick="userinput();" ></button>
-      <button class="top-right btn" id="topright" onclick="userinput();"></button>
+      <button class="top-left btn" id="topleft" onclick="gclick();" ></button>
+      <button class="top-right btn" id="topright" onclick="rclick();"></button>
     </div>
     <div class="bottom">
-      <button class="bottom-left btn" id="bottomleft" onclick="userinput();"></button>
-      <button class="bottom-right btn" id="bottomright" onclick="userinput();"></button>
+      <button class="bottom-left btn" id="bottomleft" onclick="yclick();"></button>
+      <button class="bottom-right btn" id="bottomright" onclick="bclick();"></button>
     </div>
   </div>
   <div class=inner-circle>
