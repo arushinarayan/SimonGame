@@ -41,7 +41,6 @@ h2{
 .top-left:hover {
   background-color: #00ff00;
 }
-
 .top-right {
   border-style: solid;
   border-color: black;
@@ -55,7 +54,6 @@ h2{
 .top-right:hover {
   background-color: #ff0000;
 }
-
 .bottom-left {
   border-style: solid;
   border-color: black;
@@ -69,7 +67,6 @@ h2{
 .bottom-left:hover {
   background-color: #ffff00;
 }
-
 .bottom-right {
   border-style: solid;
   border-color: black;
